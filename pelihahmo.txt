@@ -1,0 +1,24 @@
+31.5.
+
+Mecanim, unityn animaatioteknologia. Mahdollistaa animaatioiden uudelleenkäytön
+
+mixamossa erilaisia animaatioita jotka otettu motion capillä (www.mixamo.com/store)
+
+hahmon valmistaminen
+ - animaattorin rigi + "varjorigi" (scalerigi toimii näin - tehty täysin unityn kanssa yhteensopivaksi (FK-hierarkia ja vain yksi root)
+ - suora T-pose toimii Mecanimin kanssa (eli kädet tikkusuorana sivulle päin)
+ - hierarkian huippua ei animoida
+ - luut assosioidaan Mecanim-luihin nimen ja hierarkian mukaan
+ - hahmo voidaan jo Mayassa animoida liikkumaan
+	- root motion
+	- jalat ei lipsu
+
+3D-pelihahmo (3rd person) mitä tarvitaan
+ - mesh
+ - animaatioklipit
+ - blend tree (tilakone)
+ - blend shapes
+ - rigid body
+ - colliderit (capsule)
+ - koodi (käyttäjän input, hahmon ja kameran ohjaaminen)
+ - audio (kävelyn äänet)

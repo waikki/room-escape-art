@@ -1,0 +1,143 @@
+24.5: Aikataulupalautus
+27.5: V‰lipalautus
+3.6: Loppupalautus
+
+
+9:15-15:15
+80% l‰sn‰olo
+
+
+
+25.5.2016 - substance painter
+
+mit‰ pohjatyˆt‰ pit‰‰ tehd‰ ett‰ voi vied‰ mallin substance painteriin
+
+maxissa mallinnettu samasta esineest‰ low poly ja high poly versio
+
+low polyss‰ kolme materiaalia k‰ytˆss‰ (selkeytt‰misen vuoksi), optimaalisti olisi vain yksi materiaali koska pelimoottorissa se on helpompaa pyˆritt‰‰
+ - mutta jos lopulta yhdistelee niin ei haittaa
+ - yksi materiaali per yksi erilainen tekstuuri
+
+UV-koordinaatit m‰‰ritelty (ei tarvitse k‰ytt‰‰ koko atlasta, voi laittaa samaan useita)
+
+substance painterissa tehd‰‰n uusi projekti templaattina pb-metal-rough (perusasetukset), mutta valitaan low poly mesh selectist‰ ja painetaan sitten OK
+
+n‰kyy 3D, UVt, lauerot, materiaalit ja paljon muuta defaultn‰kym‰ss‰.
+
+vasemmalla alhaalla textureset settings v‰lilehti valittuna on mahdollista baketa tekstuurit 
+-- lis‰‰ channelseihin Emissive ja opacity ---
+
+klikkaamalla bake textures ja siit‰ aukeavasta ikkunasta ja t‰ss‰ vaiheessa lis‰t‰‰n high poly mesh jonka avulla voidaan saada sitten beikattua muita tekstuurimappeja (ID:n voi ottaa pois listasta)
+
+n‰in saadaan low polyist‰ high polyn n‰kˆsi‰
+
+beikata voi myˆs ilman high definition meshi‰ (esim ambient occlusionin kohdalla voi olla j‰rkev‰‰)
+
+smart materialseissa on jotain valmiita templateja mit‰ voi alkaa k‰ytt‰m‰‰n. ne vain kiskotaan layerille
+
+jos haluaa muuttaa templaten v‰ri‰, niin avataan layereist‰ tiputettu template, etsit‰‰n sielt‰ m‰‰r‰‰v‰ v‰ri ja oikeasta alanurkasta v‰rin kohdalta voidaan etsi‰ sille uusi v‰ri
+
+chrome: v‰ri pois ja v‰rivalinnan alta metallic t‰ysille 
+
+jos haluaa v‰hent‰‰ ruosteen m‰‰r‰‰, avataan Rust layeri ja sielt‰ avataan Maski ja sitten Propertie - Generator - osiosa oikealta avataan Parameters ja sielt‰ voi slidett‰‰ erilaisia arvoja (tekstuureja, ambien occlusionit ym) ja katsoa kuinka paljon niit‰ haluaa k‰ytt‰‰
+
+
+26.5.2016
+
+Maalaaminen substance painterilla
+
+Eilen vedettiin vain valmis materiaali layerille, mutta t‰n‰‰n katsotaan itse maalausta.
+
+Tehd‰‰n layerivalikkoon fill-layeri (nappulasta) ja huomataan ett‰ properties-valikkoon tulee tietoja 
+ - sielt‰ mm. v‰rin valinta
+ - roughnessilla voi s‰‰t‰‰ v‰rin heijastavuutta
+ - metallicilla metallisuutta (cromisuus)
+
+Raahataan Materials-v‰lilehdest‰ Iron-materiaali layerin p‰‰lle (edellinen peittyy kokonaan, huomaa ett‰ myˆs n‰ill‰ layereill‰ voi laittaa layermoodeja)
+
+avataan Iron-layerin oikean nappulan alta toiseksi ylin (add black mask - ajattele alphakanavana), jolloin Iron h‰vi‰‰ n‰kyvist‰
+
+Seuraavaksi valitaan layerist‰ Maski-neliˆ ja klikkaa "Add generator" ja sitten properties-valikosta voi valita viimeisen (Metal)
+
+n‰kyviin tulee tutut sliderit mist‰ voi s‰‰t‰‰ haluttuja arvoja
+
+Lis‰t‰‰n uusi layeri taas (kuvake plussa ja pino papereita) valitaan properties-valikosta color-v‰lilehti ja sielt‰ maalataan base colorilla (yl‰palkin kolmas tyˆkalu, shiftill‰ saa suoraa viivaa)
+
+properties-v‰lilehdest‰ voi valita myˆs muita kanavia esim roughness, jolloin maalataankin kiilt‰vyytt‰ jne jne
+
+properties-v‰lilehdest‰ n‰kyy myˆs mit‰ asetuksia esim brushilla ja v‰rill‰ on p‰‰ll‰ ja muokata millaisia ne on (esim. brushin kuvia ym kute mudboxissa)
+
+heightia maalamalla saa tehty‰ esim bumpia ihan pienille detajeille. P‰‰ll' n‰kyv‰ kanava n‰kyy properties-valikossa boldattuna
+
+myˆs stencilit lˆytyy (6. kuvake yl‰palkissa)
+
+C-pikan‰pp‰imell‰ p‰‰see katsomaan eri kanavia yksi kerrallaan, M-pikan‰pp‰imell‰ p‰‰see takasin perusn‰kym‰‰n
+
+fysikaalisilla brusheilla saa tehty‰ esim valumia tai frakturea tai iskua tai sandstorm tai pisaroita ym.
+
+27.5.2016
+
+Substancesta Unityyn
+
+hyv‰ ohje lˆytyy substance designerin omilta sivuilta ohjeena Unity
+
+support.allegorithmic.com/documentation/display/SPDOC/Unity+5
+
+kun kaikki tekstuurit valmiita, niin otetaan file - export textures. export v‰lilehdess‰ config-pudotusvalikosta lˆyt‰‰ erilaisia, kannattaa ottaa sielt‰ Unity 5 (standard Metallic) ja SEN JƒLKEEN menn‰‰n Configuration v‰lilehdess‰ lis‰t‰‰n yksi uusi kanava klikkaamalla RGB ja sitten vet‰m‰ll‰ sen p‰‰lle sivuvalikosta ambient occlusion (katsotaan ett‰ nime‰minen menee samalla lailla kuin muissa)
+
+ja sitten painetaan export
+
+sitten unitys‰ vedet‰‰n standard shaderiin kartat vastaavan nimisiin slotteihin
+
+normalmapin kohdalla pit‰‰ muistaa k‰yd‰ laittamassa sn testure type: Normal map ja ottaa create from grayscale pois p‰‰lt‰ ja sitten apply
+
+unityss‰ laita edit - prject settings - playeri ja color space lineariseksi
+
+JOS kamerassa unityss‰ on HDR-p‰‰lt‰, niin pit‰‰ menn‰ project settings - quality - antialiaising otetaan pois p‰‰lt‰ (disable), mutta antialisointi skripti kannattaa viel‰ lis‰t‰ kameraan j‰lkik‰teen
+
+heijastuksiin tarvitaan enviromappi, sama mit‰ k‰ytettiin substance painterissa (viewer settingsiss‰ n‰keee kuvan ja sen environment blurri‰ v‰hent‰m‰ll‰ n‰kee selv‰n‰ kuvan, environment map-nappulasta voi vaihtaa kuvaa)
+
+menn‰‰n substance painterissa vasempaan alakulmaan ja etsit‰‰n sielt‰ k‰ytˆss‰ oleva kuva ja sitten voidaan oikealla nappulalla exportata (export resource)
+
+unityss‰ kuvan voi tuoda ja sen texture type pit‰‰ vaihtaa cubemapiksi ja latitude/longitude mapping glossy reflection p‰‰lle
+
+sen j‰lkeen pit‰‰ tehd‰ materiaali (standard shader) ja laittaa se siihen, mutta siihen pit‰‰ shaderiksi vaihtaa skybox ja cubemap
+
+
+sitten pit‰‰ viel‰ window-lighting scene v‰lilehdess‰ vaihtaa skyboxiksi itse tehty cubemap
+
+reload level-funktion k‰ytt‰minen seoittaa GI-baketuksen, se pit‰‰ ottaa poois klikkaamalla samasta paikka Other setting Auto-nappulan pois p‰‰lt‰
+
+Cubemap pit‰‰ k‰ytd‰ kaiken t‰n j‰lkeen viel‰ vaihtamassa trilineaariseksi
+
+ymp‰ristˆst‰ tulevat heijastukset saadaan toimimaan k‰ytt‰m‰ll‰ reflection probea (ohjeet nettisivulla), lˆytyy gameobject-lighting-reflection probe, luomisen j‰lkeen siirretty oikeaan paikkaan ja laitettu koko oikeaksi ja resoluutio vaihdettu 128, m‰‰r‰ vaikuttaa heijastusten ter‰vyyteen
+
+jos cubemap ei ole se mit‰ haluaa taustalla n‰hd‰
+ - editorista saa pois n‰kyvist‰ klikkaamalla valokuva-painikkeesta skyboxin pois p‰‰lt‰
+ - itse pelist‰ saa pois valitsemalla kameran ja sielt‰ clear flags-kohdasta voi valita haluamansa asian (esim solid color)
+
+
+assets - import package - effects lˆytyy kameraan laitettava antialiasointi ja mahdollisesti muutakin mukavaa
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
